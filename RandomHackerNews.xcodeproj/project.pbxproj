@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C23F7D1246163FC005B97C2 /* RandomHackerNewsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C23F7D0246163FC005B97C2 /* RandomHackerNewsView.h */; };
-		3C23F7D3246163FC005B97C2 /* RandomHackerNewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23F7D2246163FC005B97C2 /* RandomHackerNewsView.m */; };
+		3C23F7DB24616433005B97C2 /* RandomHackerNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C23F7DA24616433005B97C2 /* RandomHackerNewsView.swift */; };
+		3C23F7DE24616843005B97C2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C23F7DD24616843005B97C2 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3C23F7CD246163FC005B97C2 /* RandomHackerNews.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomHackerNews.saver; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C23F7D0246163FC005B97C2 /* RandomHackerNewsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RandomHackerNewsView.h; sourceTree = "<group>"; };
-		3C23F7D2246163FC005B97C2 /* RandomHackerNewsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RandomHackerNewsView.m; sourceTree = "<group>"; };
 		3C23F7D4246163FC005B97C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C23F7DA24616433005B97C2 /* RandomHackerNewsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomHackerNewsView.swift; sourceTree = "<group>"; };
+		3C23F7DD24616843005B97C2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -23,6 +23,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C23F7DE24616843005B97C2 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +35,7 @@
 			children = (
 				3C23F7CF246163FC005B97C2 /* RandomHackerNews */,
 				3C23F7CE246163FC005B97C2 /* Products */,
+				3C23F7DC24616843005B97C2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -48,11 +50,18 @@
 		3C23F7CF246163FC005B97C2 /* RandomHackerNews */ = {
 			isa = PBXGroup;
 			children = (
-				3C23F7D0246163FC005B97C2 /* RandomHackerNewsView.h */,
-				3C23F7D2246163FC005B97C2 /* RandomHackerNewsView.m */,
+				3C23F7DA24616433005B97C2 /* RandomHackerNewsView.swift */,
 				3C23F7D4246163FC005B97C2 /* Info.plist */,
 			);
 			path = RandomHackerNews;
+			sourceTree = "<group>";
+		};
+		3C23F7DC24616843005B97C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C23F7DD24616843005B97C2 /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -62,7 +71,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C23F7D1246163FC005B97C2 /* RandomHackerNewsView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +106,7 @@
 				TargetAttributes = {
 					3C23F7CC246163FC005B97C2 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -134,7 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C23F7D3246163FC005B97C2 /* RandomHackerNewsView.m in Sources */,
+				3C23F7DB24616433005B97C2 /* RandomHackerNewsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,12 +262,20 @@
 		3C23F7D8246163FC005B97C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = RandomHackerNews/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = hitode909.RandomHackerNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
@@ -266,12 +283,19 @@
 		3C23F7D9246163FC005B97C2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = RandomHackerNews/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = hitode909.RandomHackerNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
