@@ -2,11 +2,12 @@
 
 - Open [Hacker News](https://news.ycombinator.com/) in WebView
 - Visit random news
-- Scroll the news to page button and back to Haker News
+- Scroll the news to page button and back to Hacker News
 
 # WHY THIS REPOSITORY IS USEFUL
 
 This screensaver has very simple implementation. Main logic is executed with `WebView.evaluateJavaScript`.
+You can fork this repository and customize for your favorite website.
 
 - https://github.com/hitode909/RandomHackerNewsScreenSaver/blob/414b28747429efe9be4fad7cc5b8d86de83f1b14/RandomHackerNews/RandomHackerNewsView.swift#L26
 
