@@ -40,3 +40,7 @@ You can fork this repository and customize for your favorite website.
             """
         self.webView.evaluateJavaScript(code, completionHandler: nil)
 ```
+
+## LICENCE
+
+MIT
